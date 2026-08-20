@@ -1,0 +1,24 @@
+:root{
+    /* Viniyog Brand Colors */
+    --primary-color: #1E5B89;
+    --secondary-color: #4F84AE;
+    --accent-color: #7DB3D9;
+
+    /* Background Colors */
+    --bg-light: #F8FAFC;
+    --bg-dark: #0F172A;
+    --bg-white: #FFFFFF;
+
+    /* Text Colors */
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+    --text-white: #FFFFFF;
+
+    /* Border */
+    --border-color: #E2E8F0;
+
+    /* Status Colors */
+    --success-color: #22C55E;
+    --error-color: #EF4444;
+    --warning-color: #F59E0B;
+}

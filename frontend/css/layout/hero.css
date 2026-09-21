@@ -254,3 +254,36 @@
         max-width: 320px;
     }
 }
+
+/* ================================
+   LARGE SCREEN
+================================ */
+
+@media (min-width: 1201px) {
+
+    .hero {
+        padding: 3rem 2rem;
+    }
+
+    .hero-container {
+        max-width: 1400px;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-description {
+        font-size: 1.15rem;
+        max-width: 560px;
+    }
+
+    .hero-image img {
+        max-width: 600px;
+    }
+}

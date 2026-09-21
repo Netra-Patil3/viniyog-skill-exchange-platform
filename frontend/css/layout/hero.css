@@ -1,0 +1,256 @@
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    background-color: var(--bg-light);
+    padding: 1rem 1.5rem;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+/* ================================
+   HERO CONTENT
+================================ */
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+    color: var(--text-primary);
+
+    font-size: 3.5rem;
+    line-height: 1.15;
+    font-weight: 700;
+    margin: 0.2rem 0 0.5rem;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary-color);
+}
+
+.hero-description {
+    color: var(--text-secondary);
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+
+    max-width: 520px;
+    margin-bottom: 2rem;
+}
+
+
+/* ================================
+   HERO BUTTONS
+================================ */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.8rem 1.5rem;
+
+    border-radius: 0.5rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+
+/* ================================
+   HERO HIGHLIGHTS
+================================ */
+
+.hero-highlights {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.hero-highlight i {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+
+/* ================================
+   HERO IMAGE
+================================ */
+
+.hero-image {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-highlights {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 450px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 576px) {
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero-container {
+        gap: 2.5rem;
+    }
+
+    .hero-label {
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .hero-highlights {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero-image img {
+        max-width: 320px;
+    }
+}

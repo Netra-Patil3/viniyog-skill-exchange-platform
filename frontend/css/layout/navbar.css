@@ -3,177 +3,191 @@
 ================================ */
 
 .navbar {
-    width: 100%;
-    background-color: var(--bg-white);
-    border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.2rem 0.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 1.2rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
 
 /* ================================
    LOGO
 ================================ */
 
-.logo img {
-    width: 66px;
-    height: auto;
-    display: block;
+.logo {
+  display: flex;
 }
 
+.logo img {
+  width: 70px;
+  height: auto;
+  display: block;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 750;
+}
+
+.logo p{
+    color: rgb(44, 37, 37);
+}
 
 /* ================================
    NAV LINKS
 ================================ */
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-    color: var(--text-primary);
-    text-decoration: none;
+  color: var(--text-primary);
+  text-decoration: none;
 
-    font-size: 0.95rem;
-    font-weight: 500;
+  font-size: 1rem;
+  font-weight: 500;
 
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-5px);
+}
+.nav-links li {
+  transition: transform 0.3s ease;
 }
 
+.nav-links li:hover {
+  transform: translateY(-5px);
+}
 
 /* ================================
    NAV BUTTONS
 ================================ */
 
 .nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .nav-buttons a {
-    text-decoration: none;
+  text-decoration: none;
 
-    padding: 0.6rem 1rem;
-    border-radius: 0.5rem;
+  padding: 0.8rem 1.3rem;
+  border-radius: 0.5rem;
 
-    font-size: 0.9rem;
-    font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 600;
 
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .nav-login {
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-login:hover {
-    background-color: var(--primary-color);
-    color: var(--text-white);
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  transform: translateY(-5px);
 }
 
 .nav-signup {
-    background-color: var(--primary-color);
-    color: var(--text-white);
+  background-color: var(--primary-color);
+  color: var(--text-white);
 }
 
 .nav-signup:hover {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  transform: translateY(-5px);
 }
-
 
 /* ================================
    MENU TOGGLE
 ================================ */
 
 .menu-toggle {
-    display: none;
+  display: none;
 
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 
-    color: var(--primary-color);
-    font-size: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.5rem;
 
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 /* ================================
    LARGE SCREEN
 ================================ */
 
 @media (min-width: 1201px) {
+  .nav-container {
+    max-width: 1400px;
+  }
 
-    .nav-container {
-        max-width: 1400px;
-    }
-
-    .nav-links {
-        gap: 2.5rem;
-    }
+  .nav-links {
+    gap: 2.5rem;
+  }
 }
-
 
 /* ================================
    TABLET
 ================================ */
 
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 0.7rem 1.5rem;
+  }
 
-    .nav-container {
-        padding: 0.7rem 1.5rem;
-    }
+  .logo img {
+    width: 70px;
+  }
 
-    .logo img {
-        width: 70px;
-    }
+  .nav-links,
+  .nav-buttons {
+    display: none;
+  }
 
-    .nav-links,
-    .nav-buttons {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
+  .menu-toggle {
+    display: block;
+  }
 }
-
 
 /* ================================
    MOBILE
 ================================ */
 
 @media (max-width: 576px) {
+  .nav-container {
+    padding: 0.6rem 1rem;
+  }
 
-    .nav-container {
-        padding: 0.6rem 1rem;
-    }
+  .logo img {
+    width: 60px;
+  }
 
-    .logo img {
-        width: 60px;
-    }
-
-    .menu-toggle {
-        font-size: 1.4rem;
-    }
+  .menu-toggle {
+    font-size: 1.4rem;
+  }
 }

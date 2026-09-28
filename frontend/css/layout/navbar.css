@@ -11,7 +11,7 @@
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0.8rem 1.5rem;
+    padding: 0.2rem 0.2rem;
 
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
 ================================ */
 
 .logo img {
-    width: 80px;
+    width: 66px;
     height: auto;
     display: block;
 }

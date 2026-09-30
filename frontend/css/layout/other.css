@@ -1,0 +1,161 @@
+/*  ==================== Why choose viniyog ===================*/
+
+
+.why-viniyog {
+    background-color: var(--bg-white);
+    padding: 5rem 1.5rem;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+
+    padding: 0.35rem 0.9rem;
+    border-radius: 2rem;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    margin-bottom: 0.8rem;
+}
+
+.section-heading h2 {
+    color: var(--text-primary);
+
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+}
+
+.section-heading h2 span {
+    color: var(--primary-color);
+}
+
+.section-heading p {
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   FEATURE CARDS
+================================= */
+
+.feature-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+/* =================================
+   FEATURE CARD
+================================= */
+
+.feature-card {
+    background-color: var(--bg-white);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 18px;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(8, 78, 136, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--secondary-color);
+
+    box-shadow: 0 14px 35px rgba(8, 78, 136, 0.14);
+}
+
+
+/* =================================
+   FEATURE ICON
+================================= */
+
+.feature-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 1.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--accent-color);
+
+    border-radius: 16px;
+
+    font-size: 1.8rem;
+}
+
+
+/* =================================
+   FEATURE TITLE
+================================= */
+
+.feature-card h3 {
+    color: var(--text-primary);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    margin-bottom: 0.7rem;
+}
+
+
+/* =================================
+   FEATURE DESCRIPTION
+================================= */
+
+.feature-card p {
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/*  ==================== How it works ===================*/
+
+/*  ==================== blue bar ===================*/
+
+/*  ==================== Ready to start your learning journey ===================*/

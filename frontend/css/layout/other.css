@@ -1,0 +1,206 @@
+/*  ==================== Why choose viniyog ===================*/
+
+
+.why-viniyog {
+    background-color: var(--bg-white);
+    padding: 1rem 1.5rem;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.why-viniyog-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.why-viniyog-heading h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.why-viniyog-heading h2 {
+    color: var(--text-primary);
+
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+}
+
+.why-viniyog-heading h2 span {
+    color: var(--primary-color);
+}
+
+.why-viniyog-heading p {
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   FEATURE CARDS
+================================= */
+
+.feature-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+/* =================================
+   FEATURE CARD
+================================= */
+
+.feature-card {
+    background-color: var(--bg-light);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 18px;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(8, 78, 136, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--secondary-color);
+
+    box-shadow: 0 14px 35px rgba(8, 78, 136, 0.14);
+}
+
+
+/* =================================
+   FEATURE ICON
+================================= */
+
+.feature-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 1.8rem;
+}
+
+.feature-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* =================================
+   FEATURE TITLE
+================================= */
+
+.feature-card h3 {
+    color: var(--text-primary);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    margin-bottom: 0.7rem;
+}
+
+
+/* =================================
+   FEATURE DESCRIPTION
+================================= */
+
+.feature-card p {
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+    .why-viniyog {
+        padding: 4rem 1.5rem;
+    }
+
+    .feature-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 576px) {
+
+    .why-viniyog {
+        padding: 3.5rem 1rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .section-heading p {
+        font-size: 0.9rem;
+    }
+
+    .feature-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card:last-child {
+        max-width: none;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+}
+
+/*  ==================== How it works ===================*/
+
+/*  ==================== blue bar ===================*/
+
+/*  ==================== Ready to start your learning journey ===================*/

@@ -1,76 +1,150 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\layout\navbar.css" />
-    <link rel="stylesheet" href="css\base\variables.css" />
-    <link rel="stylesheet" href="css\layout\hero.css" />
-    <link rel="stylesheet" href="css\layout\hero.css" />
-    <link rel="stylesheet" href="css\base\reset.css" />
-    <link rel="stylesheet" href="css\base\typography.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css\layout\navbar.css">
+    <link rel="stylesheet" href="css\base\variables.css">
+    <link rel="stylesheet" href="css\layout\hero.css">
+    <link rel="stylesheet" href="css\layout\hero.css">
+    <link rel="stylesheet" href="css\base\reset.css">
+    <link rel="stylesheet" href="css\base\typography.css">
+    <link rel="stylesheet" href="css\layout\other.css">
+
+</head>
+
+<body>
+
     <!--========= Navbar =========-->
 
     <nav class="navbar">
-      <div class="nav-container">
-        <div class="logo">
-          <a href="index.html">
-            <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog" />
-          </a>
-          <div class="logo-text">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog">
+            </a>
             <h1>VINIYOG</h1>
-            <P>Together We Learn. Together We Grow.</P>
-          </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html">Browse Students</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="nav-login">Login</a>
+                <a href="signup.html" class="nav-signup">Sign Up</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="students.html">Browse Students</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#about">About Us</a></li>
-        </ul>
-        <div class="nav-buttons">
-          <a href="login.html" class="nav-login">Login</a>
-          <a href="signup.html" class="nav-signup">Sign Up</a>
-        </div>
-        <button class="menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
     </nav>
 
     <!-- ========== Hero section ========== -->
 
     <section class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <span class="hero-label"
-            >Skill Exchange platform for college students</span
-          >
-          <h1>
-            Together We Learn.
-            <span>Together We Grow.</span>
-          </h1>
-          <p class="hero-description">
-            Viniyog is a skill exchange platform for college students. Teach
-            what you know. Learn what you love. Grow together.
-          </p>
-          <div class="hero-buttons">
-            <a href="signup.html" class="btn-primary">Get Started</a>
-            <a href="students.html" class="btn-secondary">Explore Students</a>
-          </div>
-          <div class="hero-highlights">
-            <!-- Connect -->
-            <!-- Teach -->
-            <!-- Learn -->
-          </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-label">Skill Exchange platform for college students</span>
+                <h1>
+                    Together We Learn.
+                    <span>Together We Grow.</span>
+                </h1>
+                <p class="hero-description">
+                    Viniyog is a skill exchange platform for college students.
+                    Teach what you know. Learn what you love.
+                    Grow together.
+                </p>
+                <div class="hero-buttons">
+                    <a href="signup.html" class="btn-primary">Get Started</a>
+                    <a href="students.html" class="btn-secondary">Explore Students</a>
+                </div>
+                <div class="hero-highlights">
+
+                    <div class="highlight-item">
+                        <span class="highlight-icon">👥</span>
+                        <span>Connect</span>
+                    </div>
+
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎓</span>
+                        <span>Teach</span>
+                    </div>
+
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🤝</span>
+                        <span>Learn</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets\special images\hero.png" alt="Hero Image">
+            </div>
         </div>
-        <div class="hero-image">
-          <img src="assets\special images\hero.png" alt="Hero Image" />
-        </div>
-      </div>
     </section>
-  </body>
+
+
+    <!-- ========== Why Choose Viniyog ========== -->
+
+    <section class="why-viniyog">
+
+        <div class="why-viniyog-container">
+
+            <div class="why-viniyog-heading">
+                <h1>Why Choose Viniyog?</h1>
+                <p>
+                    Viniyog helps college students share their knowledge,
+                    learn new skills and grow together.
+                </p>
+            </div>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="assets\icons\Graduation Hat.png">
+                    </div>
+                    <h3>Teach Skills</h3>
+                    <p>
+                        Share your knowledge and help others grow by teaching the skills you are good at.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📚
+                    </div>
+
+                    <h3>Learn New Skills</h3>
+
+                    <p>
+                        Find and learn from peers. Explore new skills and level up together.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📝
+                    </div>
+
+                    <h3>Share Notes</h3>
+
+                    <p>
+                        Upload and access study notes.Learn better with the right resources.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+</body>
+
 </html>

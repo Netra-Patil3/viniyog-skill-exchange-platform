@@ -4,6 +4,7 @@
 
 .hero {
     background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem 1.5rem;
 }
 
@@ -142,6 +143,28 @@
     font-size: 1rem;
 }
 
+/* Hero Highlights */
+
+.hero-highlights {
+    display: flex;
+    gap: 45px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #1F2937;
+}
+
+.highlight-icon {
+    font-size: 25px;
+}
+
+
 
 /* ================================
    HERO IMAGE
@@ -201,6 +224,14 @@
         justify-content: center;
     }
 
+    .highlight-item {
+        font-size: 0.9rem;
+    }
+
+    .highlight-icon {
+        font-size: 22px;
+    }
+
     .hero-image {
         width: 100%;
     }
@@ -248,8 +279,18 @@
     }
 
     .hero-highlights {
-        flex-direction: column;
-        gap: 0.8rem;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .highlight-item {
+        font-size: 0.85rem;
+    }
+
+    .highlight-icon {
+        font-size: 20px;
     }
 
     .hero-image img {

@@ -4,6 +4,7 @@
 
 .hero {
     background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem 1.5rem;
 }
 

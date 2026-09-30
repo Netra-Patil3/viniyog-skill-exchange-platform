@@ -101,6 +101,7 @@
 
 .btn-primary:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-5px);
 }
 
 .btn-secondary {
@@ -113,6 +114,7 @@
 .btn-secondary:hover {
     background-color: var(--primary-color);
     color: var(--text-white);
+    transform: translateY(-5px);
 }
 
 

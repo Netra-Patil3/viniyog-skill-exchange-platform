@@ -1,95 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css\base\variables.css">
-    <link rel="stylesheet" href="css\base\reset.css">
-    <link rel="stylesheet" href="css\base\typography.css">
-    <link rel="stylesheet" href="css\components\student-card.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css\base\variables.css" />
+    <link rel="stylesheet" href="css\base\reset.css" />
+    <link rel="stylesheet" href="css\base\typography.css" />
+    <link rel="stylesheet" href="css\components\student-card.css" />
+    <link rel="stylesheet" href="css\layout\navbar.css">
+  </head>
+  <body>
+    <!--========= Navbar =========-->
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog" />
+        </a>
+        <h1>VINIYOG</h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="students.html">Browse Students</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <a href="login.html" class="nav-login">Login</a>
+          <a href="signup.html" class="nav-signup">Sign Up</a>
+        </div>
+        <button class="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
     <div class="student-card">
-
-    <!-- Student Information -->
-    <div class="student-info">
-
+      <!-- Student Information -->
+      <div class="student-info">
         <div class="student-photo">
-            <img src="assets/profile photos/netra.jpeg" alt="Netra Patil">
+          <img src="assets/profile photos/netra.jpeg" alt="Netra Patil" />
 
-            <span class="online-status"></span>
+          <span class="online-status"></span>
         </div>
 
         <div class="student-details">
+          <h2>Netra Patil</h2>
 
-            <h2>Netra Patil</h2>
+          <p class="department">AI & Data Science</p>
 
-            <p class="department">
-                AI & Data Science
-            </p>
+          <p class="year">🎓 2nd Year</p>
 
-            <p class="year">
-                🎓 2nd Year
-            </p>
-
-            <p class="college">
-                📍 DKTE, Ichalkaranji
-            </p>
-
+          <p class="college">📍 DKTE, Ichalkaranji</p>
         </div>
+      </div>
 
-    </div>
-
-
-    <!-- Skills -->
-    <div class="student-skills">
-
+      <!-- Skills -->
+      <div class="student-skills">
         <!-- Can Teach -->
         <div class="skill-group">
+          <div class="skill-title">
+            <span class="skill-icon">🎓</span>
+            <h3>Can Teach</h3>
+          </div>
 
-            <div class="skill-title">
-                <span class="skill-icon">🎓</span>
-                <h3>Can Teach</h3>
-            </div>
-
-            <div class="skill-list">
-                <span>C++</span>
-                <span>HTML/CSS</span>
-                <span>Python</span>
-            </div>
-
+          <div class="skill-list">
+            <span>C++</span>
+            <span>HTML/CSS</span>
+            <span>Python</span>
+          </div>
         </div>
-
 
         <!-- Want to Learn -->
         <div class="skill-group">
+          <div class="skill-title">
+            <span class="skill-icon">🎯</span>
+            <h3>Want to Learn</h3>
+          </div>
 
-            <div class="skill-title">
-                <span class="skill-icon">🎯</span>
-                <h3>Want to Learn</h3>
-            </div>
-
-            <div class="skill-list">
-                <span>Machine Learning</span>
-                <span>React</span>
-            </div>
-
+          <div class="skill-list">
+            <span>Machine Learning</span>
+            <span>React</span>
+          </div>
         </div>
+      </div>
 
-    </div>
-
-
-    <!-- Profile Button -->
-    <div class="student-action">
-
+      <!-- Profile Button -->
+      <div class="student-action">
         <a href="profile.html" class="profile-button">
-            <span>View Profile</span>
-            <span class="arrow">→</span>
+          <span>View Profile</span>
+          <span class="arrow">→</span>
         </a>
-
+      </div>
     </div>
-
-</div>
-</body>
-</html> 
+  </body>
+</html>

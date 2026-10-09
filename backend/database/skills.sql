@@ -1,0 +1,7 @@
+
+USE viniyog_db;
+
+CREATE TABLE IF NOT EXISTS skills (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    skill_name VARCHAR(100) NOT NULL UNIQUE
+) ENGINE=InnoDB;

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shared Notes | Viniyog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/base/variables.css" />
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/typography.css" />
+    <link rel="stylesheet" href="css/layout/navbar.css" />
+    <link rel="stylesheet" href="css/pages/community.css" />
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><img src="assets/logo/viniyog-logo-light.png" alt="Viniyog" /></a>
+          <div class="logo-text"><h1>VINIYOG</h1><p>Together We Learn. Together We Grow.</p></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="students.html">Browse Students</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="notes.html">Shared Notes</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <a href="login.html" class="nav-login">Login</a>
+          <a href="signup.html" class="nav-signup">Sign Up</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main class="community-page">
+      <header>
+        <h1>Shared Study Notes</h1>
+        <p>Share useful study notes with the Viniyog student community.</p>
+      </header>
+      <section id="notesAuthPrompt" class="community-card" hidden>
+        <p>Log in to view, download, or share notes.</p>
+        <a href="login.html">Log in</a> or <a href="signup.html">create an account</a>.
+      </section>
+      <section id="noteUploadPanel" class="community-card" hidden>
+        <h2>Upload Notes</h2>
+        <p>Accepted formats: PDF or plain text. Maximum size: 10 MB.</p>
+        <form id="noteForm" class="community-form" enctype="multipart/form-data">
+          <label for="noteTitle">Note title</label>
+          <input id="noteTitle" name="title" type="text" maxlength="150" required />
+          <label for="noteFile">File</label>
+          <input id="noteFile" name="noteFile" type="file" accept=".pdf,.txt,application/pdf,text/plain" required />
+          <button type="submit">Upload Notes</button>
+          <p id="noteUploadStatus" class="page-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="community-card">
+        <h2>Available Notes</h2>
+        <p id="notesStatus" class="page-status" role="status" aria-live="polite">Checking access...</p>
+        <ul id="notesList" class="request-list"></ul>
+      </section>
+    </main>
+
+    <script src="js/notes.js"></script>
+  </body>
+</html>

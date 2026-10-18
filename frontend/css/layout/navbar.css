@@ -99,6 +99,38 @@
   transition: 0.3s ease;
 }
 
+.nav-buttons .nav-profile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  padding: 0;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-white);
+}
+
+.nav-buttons .nav-profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav-buttons .nav-profile:hover {
+  color: var(--text-white);
+  background: var(--primary-color);
+}
+
+.nav-buttons button {
+  border: 0;
+  cursor: pointer;
+}
+
 .nav-login {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -157,6 +189,11 @@
 
 @media (max-width: 768px) {
   .nav-container {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav-container {
     padding: 0.7rem 1.5rem;
   }
 
@@ -167,6 +204,27 @@
   .nav-links,
   .nav-buttons {
     display: none;
+  }
+
+  .nav-links.nav-open {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.nav-open li {
+    padding: 0.6rem 0;
+  }
+
+  .nav-buttons.nav-open {
+    order: 4;
+    width: 100%;
+    display: flex;
+    padding-bottom: 0.7rem;
   }
 
   .menu-toggle {

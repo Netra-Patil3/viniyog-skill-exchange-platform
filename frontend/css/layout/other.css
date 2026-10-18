@@ -199,8 +199,534 @@
     }
 }
 
-/*  ==================== How it works ===================*/
 
-/*  ==================== blue bar ===================*/
+/* =========================================
+   HOW IT WORKS SECTION
+========================================= */
+
+.how-it-works {
+    background-color: var(--bg-light);
+    padding: 4rem 1.5rem;
+}
+
+.how-it-works-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.how-it-works-heading {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.how-it-works-heading h1 {
+    margin: 0;
+
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   STEPS CONTAINER
+========================================= */
+
+.steps-container {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr) 
+        minmax(0, 1fr) 
+        minmax(0, 1fr) 
+        minmax(0, 1fr);
+
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* =========================================
+   STEP CARD
+========================================= */
+
+.step-card {
+    min-width: 0;
+    height: 100%;
+    padding: 1.75rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+
+    text-align: center;
+
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--secondary-color);
+
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =========================================
+   STEP ICON
+========================================= */
+
+.step-icon {
+    width: 75px;
+    height: 65px;
+    margin-bottom: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 1.8rem;
+}
+
+.step-icon img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+/* Special sizing for Step 2 icon */
+
+#step-2 {
+    width: 85px;
+    height: 65px;
+}
+#step-4{
+    width: 96px;
+    height: 69px;
+
+}
+
+/* =========================================
+   STEP TITLE
+========================================= */
+
+.step-card h3 {
+    margin: 0 0 0.65rem;
+
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   STEP DESCRIPTION
+========================================= */
+
+.step-card p {
+    margin: 0;
+
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .how-it-works {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .steps-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .step-card {
+        padding: 1.75rem 1.25rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE — 2 × 2 GRID
+========================================= */
+
+@media (max-width: 576px) {
+
+    .how-it-works {
+        padding: 3rem 1rem;
+    }
+
+    .how-it-works-heading {
+        margin-bottom: 2rem;
+    }
+
+    .how-it-works-heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .steps-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+    }
+
+    .step-card {
+        padding: 1.25rem 0.75rem;
+        border-radius: 0.85rem;
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 55px;
+        margin-bottom: 0.9rem;
+
+        font-size: 1.5rem;
+    }
+
+    #step-2 {
+        width: 65px;
+        height: 55px;
+    }
+
+    .step-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+        font-size: 0.78rem;
+        line-height: 1.5;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .how-it-works {
+        padding: 2.5rem 0.75rem;
+    }
+
+    .how-it-works-heading h1 {
+        font-size: 1.6rem;
+    }
+
+    .steps-container {
+        gap: 0.65rem;
+    }
+
+    .step-card {
+        padding: 1rem 0.55rem;
+    }
+
+    .step-icon {
+        width: 50px;
+        height: 48px;
+    }
+
+    #step-2 {
+        width: 55px;
+        height: 48px;
+    }
+
+    .step-card h3 {
+        font-size: 0.85rem;
+    }
+
+    .step-card p {
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .step-card {
+        transition: none;
+    }
+
+    .step-card:hover {
+        transform: none;
+    }
+}
+
+
+/*  ====================STATISTICS SECTION ===================*/
+.stats-section {
+    background-color: #1E5B89;
+    padding: 1.2rem 1.5rem;
+}
+
+/* =================================
+   STATS CONTAINER
+================================= */
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* =================================
+   STAT ITEM
+================================= */
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+/* =================================
+   STAT ICON
+================================= */
+.stat-icon {
+    font-size: 2rem;
+}
+
+/* =================================
+   STAT CONTENT
+================================= */
+.stat-content h3 {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.stat-content p {
+    color: var(--text-white);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+    .stats-section {
+        padding: 1.2rem 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+        padding: 1rem;
+    }
+
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-item:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 576px) {
+    .stats-section {
+        padding: 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 1rem 0.5rem;
+        text-align: center;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .stat-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .stat-content p {
+        font-size: 0.75rem;
+    }
+}
 
 /*  ==================== Ready to start your learning journey ===================*/
+
+/* =================================
+   CTA SECTION
+================================= */
+.cta-section {
+    background-color: var(--bg-white);
+    padding: 1rem 1.5rem;
+}
+/* =================================
+   CTA CONTAINER
+================================= */
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* =================================
+   CTA CONTENT
+================================= */
+.cta-content {
+    background-color: #EAF4FD;
+    border-radius: 20px;
+    padding: 0.7rem 2rem 1rem;
+    text-align: center;
+}
+/* =================================
+   CTA HEADING
+================================= */
+.cta-content h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+.cta-content h2 span {
+    display: inline;
+    color: var(--primary-color);
+}
+/* =================================
+   CTA DESCRIPTION
+================================= */
+.cta-content p {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 auto 0.8rem;
+}
+/* =================================
+   CTA BUTTONS
+================================= */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary {
+    min-width: 135px;
+    padding: 0.65rem 1.2rem;
+}
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+    .cta-section {
+        padding: 1rem 1.5rem;
+    }
+
+    .cta-content {
+        padding: 1rem 1.5rem 1.2rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-content p {
+        font-size: 0.85rem;
+    }
+
+}
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 576px) {
+
+    .cta-section {
+        padding: 1rem;
+    }
+
+    .cta-content {
+        padding: 1.2rem 1rem 1.5rem;
+
+        border-radius: 16px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .cta-content h2 span {
+        display: block;
+    }
+
+    .cta-content p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+
+        margin-bottom: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .cta-buttons .btn-primary,
+    .cta-buttons .btn-secondary {
+        width: 100%;
+        max-width: 200px;
+    }
+
+}

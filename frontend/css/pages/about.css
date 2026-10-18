@@ -1,0 +1,756 @@
+
+/* =================================
+   ABOUT US — SHARED DESIGN SYSTEM
+================================= */
+
+:root {
+    /* Use the existing variables from variables.css */
+}
+
+.about-hero,
+.about-section,
+.mission-section,
+.features-section,
+.team-section,
+.vision-section,
+.cta-section {
+    width: 100%;
+}
+
+.page-section {
+    padding: 80px 7%;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.vision-content h2 {
+    margin-bottom: 14px;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+}
+
+.section-heading h2 span,
+.about-hero h1 span {
+    color: var(--primary-color);
+}
+
+.section-heading > p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.primary-button,
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 23px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: var(--text-white);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.primary-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.about-hero {
+    min-height: 460px;
+    padding: 65px 8%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        var(--bg-light),
+        color-mix(in srgb, var(--accent-color) 22%, var(--bg-white))
+    );
+}
+
+.hero-content {
+    max-width: 580px;
+}
+
+.about-hero h1 {
+    margin-bottom: 12px;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-tagline {
+    margin-bottom: 14px;
+    color: var(--primary-color);
+    font-size: clamp(16px, 2vw, 21px);
+    font-weight: 600;
+}
+
+.hero-description {
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-visual {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hero-circle-one {
+    width: 260px;
+    height: 260px;
+    background: color-mix(
+        in srgb,
+        var(--accent-color) 30%,
+        transparent
+    );
+}
+
+.hero-circle-two {
+    width: 190px;
+    height: 190px;
+    border: 2px solid color-mix(
+        in srgb,
+        var(--secondary-color) 40%,
+        transparent
+    );
+    transform: translate(40px, -25px);
+}
+
+.hero-card {
+    position: relative;
+    z-index: 1;
+    width: min(300px, 90%);
+    padding: 30px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    background: var(--bg-white);
+    box-shadow: 0 15px 40px color-mix(
+        in srgb,
+        var(--primary-color) 12%,
+        transparent
+    );
+    text-align: center;
+}
+
+.hero-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    font-size: 30px;
+}
+
+.hero-card h2 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 21px;
+}
+
+.hero-card p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.hero-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hero-tags span {
+    padding: 6px 12px;
+    border-radius: 30px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =================================
+   ABOUT VINIYOG
+================================= */
+
+.about-section {
+    background: var(--bg-white);
+}
+
+.about-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-symbol {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    background: var(--bg-light);
+}
+
+.about-symbol > span {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    background: var(--primary-color);
+    color: var(--text-white);
+    font-size: 56px;
+    font-weight: 800;
+}
+
+.about-symbol p {
+    margin-bottom: 0;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.about-description p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.about-description p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =================================
+   MISSION
+================================= */
+
+.mission-section {
+    padding: 75px 8%;
+    background: var(--primary-color);
+    color: var(--text-white);
+    text-align: center;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-content .eyebrow {
+    color: var(--accent-color);
+}
+
+.mission-content h2 {
+    margin-bottom: 20px;
+    font-size: clamp(30px, 4vw, 40px);
+}
+
+.mission-content > p {
+    color: var(--text-white);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.mission-divider {
+    width: 60px;
+    height: 4px;
+    margin: 25px auto;
+    border-radius: 10px;
+    background: var(--accent-color);
+}
+
+.mission-content .mission-highlight {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* =================================
+   FEATURES
+================================= */
+
+.features-section {
+    background: var(--bg-light);
+}
+
+.features-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 26px 21px;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: var(--bg-white);
+    box-shadow: 0 6px 22px color-mix(
+        in srgb,
+        var(--text-primary) 4%,
+        transparent
+    );
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px color-mix(
+        in srgb,
+        var(--primary-color) 10%,
+        transparent
+    );
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.feature-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.resources-note {
+    max-width: 1120px;
+    margin: 25px auto 0;
+    padding: 20px 23px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    background: var(--bg-white);
+}
+
+.resources-note > span {
+    color: var(--primary-color);
+    font-size: 25px;
+}
+
+.resources-note p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.resources-note strong {
+    color: var(--primary-color);
+}
+
+
+/* =================================
+   TEAM
+================================= */
+
+.team-section {
+    background: var(--bg-white);
+}
+
+.team-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+.team-card {
+    min-width: 0;
+    padding: 26px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--bg-white);
+    box-shadow: 0 6px 24px color-mix(
+        in srgb,
+        var(--text-primary) 4%,
+        transparent
+    );
+    text-align: center;
+    transition: transform 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.team-leader {
+    background: color-mix(
+        in srgb,
+        var(--bg-light) 65%,
+        var(--bg-white)
+    );
+    border-color: var(--accent-color);
+}
+
+.photo-wrapper {
+    width: 125px;
+    height: 125px;
+    flex-shrink: 0;
+    margin-bottom: 17px;
+    padding: 4px;
+    overflow: hidden;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    background: var(--bg-light);
+}
+
+.team-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.role-badge {
+    margin-bottom: 13px;
+    padding: 6px 11px;
+    border-radius: 30px;
+    background: var(--bg-light);
+    color: var(--primary-color);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.team-card h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.team-department {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.team-description {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.college-name {
+    max-width: 700px;
+    margin: 32px auto 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* =================================
+   VISION
+================================= */
+
+.vision-section {
+    padding: 75px 7%;
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.vision-content h2 {
+    color: var(--primary-color);
+}
+
+.vision-content > p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.vision-content .vision-highlight {
+    margin-top: 22px;
+    margin-bottom: 0;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* =================================
+   CALL TO ACTION
+================================= */
+
+.cta-section {
+    padding: 65px 7%;
+    background: var(--bg-white);
+}
+
+.cta-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 28px;
+    border-radius: 25px;
+    background: var(--primary-color);
+    color: var(--text-white);
+    text-align: center;
+}
+
+.cta-content h2 {
+    margin-bottom: 17px;
+    font-size: clamp(25px, 4vw, 35px);
+}
+
+.cta-content > p:not(.cta-tagline) {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: var(--text-white);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.cta-button {
+    background: var(--bg-white);
+    color: var(--primary-color);
+}
+
+.cta-button:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.cta-tagline {
+    margin: 23px 0 0;
+    color: var(--text-white);
+    font-size: 12px;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1000px) {
+    .page-section {
+        padding: 65px 5%;
+    }
+
+    .about-hero {
+        padding: 55px 5%;
+        gap: 25px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 720px;
+    }
+
+    .about-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+        padding: 50px 6% 35px;
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-visual {
+        min-height: 260px;
+    }
+
+    .hero-circle-one {
+        width: 225px;
+        height: 225px;
+    }
+
+    .hero-circle-two {
+        width: 170px;
+        height: 170px;
+    }
+
+    .page-section {
+        padding: 55px 6%;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-symbol {
+        min-height: 200px;
+    }
+
+    .about-description p {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .mission-section,
+    .vision-section {
+        padding: 55px 6%;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 23px;
+    }
+
+    .resources-note {
+        padding: 17px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 370px;
+        gap: 17px;
+    }
+
+    .team-card {
+        padding: 25px 22px;
+    }
+
+    .team-description {
+        max-width: 280px;
+    }
+
+    .cta-section {
+        padding: 45px 5%;
+    }
+
+    .cta-content {
+        padding: 38px 20px;
+    }
+}
+
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+.primary-button:focus-visible,
+.cta-button:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-us *,
+    .about-us *::before,
+    .about-us *::after {
+        transition: none;
+    }
+}

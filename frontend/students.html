@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Browse Students | Viniyog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="css\base\variables.css" />
     <link rel="stylesheet" href="css\base\reset.css" />
     <link rel="stylesheet" href="css\base\typography.css" />
     <link rel="stylesheet" href="css\components\student-card.css" />
+    <link rel="stylesheet" href="css/components/student-filters.css" />
     <link rel="stylesheet" href="css\layout\navbar.css" />
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
   </head>
 
   <body>
@@ -28,21 +32,69 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="students.html">Browse Students</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="notes.html">Shared Notes</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
         <div class="nav-buttons">
           <a href="login.html" class="nav-login">Login</a>
           <a href="signup.html" class="nav-signup">Sign Up</a>
         </div>
-        <button class="menu-toggle">
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </nav>
-    <div id="studentCardsContainer">
 
-    </div>
+    <!-- Search and Filter Section -->
+    <section class="student-search-section">
+      <div class="student-search-container">
+        <div class="student-search-heading">
+          <h1>Explore Students</h1>
+          <p>Find students to exchange skills and learn together.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input
+            type="search"
+            id="studentSearch"
+            placeholder="Search by name, skill, department, or college..."
+          />
+        </div>
+
+        <!-- Filters -->
+        <div class="student-filters">
+          <select id="departmentFilter">
+            <option value="">All Departments</option>
+          </select>
+
+          <select id="yearFilter">
+            <option value="">All Academic Years</option>
+          </select>
+
+          <select id="collegeFilter">
+            <option value="">All Colleges</option>
+          </select>
+
+          <select id="teachSkillFilter">
+            <option value="">All Teaching Skills</option>
+          </select>
+
+          <select id="learnSkillFilter">
+            <option value="">All Learning Skills</option>
+          </select>
+
+          <button type="button" id="clearFilters">Clear Filters</button>
+        </div>
+
+        <p id="studentCount" aria-live="polite">Loading students...</p>
+      </div>
+    </section>
+
+    <!-- Student Cards -->
+    <div id="studentCardsContainer"></div>
+
     <script src="js/students.js"></script>
   </body>
 </html>

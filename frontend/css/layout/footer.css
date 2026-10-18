@@ -1,0 +1,246 @@
+/* ========================================
+   VINIYOG FOOTER
+======================================== */
+
+/* ---------- MAIN FOOTER ---------- */
+
+.site-footer {
+    color: var(--text-white);
+    background-color: var(--bg-dark);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+}
+
+
+/* ---------- FOOTER BRAND ---------- */
+
+.footer-brand-link {
+    display: inline-block;
+}
+
+.footer-brand-link img {
+    display: block;
+    width: 135px;
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-brand > p {
+    margin: 0.75rem 0 0;
+
+    color: #CBD5E1;
+
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+.footer-brand .footer-description {
+    max-width: 270px;
+    margin-top: 1rem;
+
+    color: #94A3B8;
+}
+
+
+/* ---------- FOOTER COLUMNS ---------- */
+
+.footer-column h3 {
+    margin: 0 0 1rem;
+
+    color: var(--text-white);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.footer-column ul a {
+    color: #CBD5E1;
+
+    font-size: 0.8rem;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column ul a:hover {
+    color: var(--accent-color);
+}
+
+
+/* ---------- SOCIAL LINKS ---------- */
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-white);
+
+    border: 1px solid #475569;
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+/* ---------- FOOTER BOTTOM ---------- */
+
+.footer-bottom {
+    padding: 1rem 1.5rem;
+
+    border-top: 1px solid #334155;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #94A3B8;
+    font-size: 0.75rem;
+}
+
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1201px) {
+    .footer-container {
+        max-width: 1400px;
+    }
+}
+
+
+/* ========================================
+   LAPTOP / SMALL DESKTOP
+======================================== */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .footer-container {
+        gap: 1.75rem;
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 576px) {
+    .footer-container {
+        padding: 2.25rem 1.25rem;
+
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.25rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand-link img {
+        width: 120px;
+    }
+
+    .footer-column h3 {
+        font-size: 0.85rem;
+    }
+
+    .footer-column ul a {
+        font-size: 0.75rem;
+    }
+
+    .social-links {
+        gap: 0.5rem;
+    }
+
+    .social-links a {
+        width: 34px;
+        height: 34px;
+    }
+
+    .footer-bottom {
+        padding: 0.9rem 1rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.7rem;
+    }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 360px) {
+    .footer-container {
+        gap: 1.75rem 0.8rem;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer *,
+    .site-footer *::before,
+    .site-footer *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

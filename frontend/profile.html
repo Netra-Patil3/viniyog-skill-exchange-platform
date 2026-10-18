@@ -1,0 +1,326 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Profile | Viniyog</title>
+    <meta
+      name="description"
+      content="Explore student profiles, discover skills, and connect with students on Viniyog."
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="css/base/variables.css" />
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/typography.css" />
+
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="css/layout/navbar.css" />
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="css/pages/community.css" />
+    <link rel="stylesheet" href="css/pages/profile.css" />
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html" aria-label="Viniyog home">
+            <img
+              src="assets/logo/viniyog-logo-light.png"
+              alt="Viniyog logo"
+            />
+          </a>
+
+          <div class="logo-text">
+            <h1>VINIYOG</h1>
+            <p>Together We Learn. Together We Grow.</p>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="students.html" class="active">Browse Students</a>
+          </li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="notes.html">Shared Notes</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="login.html" class="nav-login">Login</a>
+          <a href="signup.html" class="nav-signup">Sign Up</a>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="profileNavigation"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="community-page profile-page">
+      <!-- Loading and error messages -->
+      <p
+        id="profileStatus"
+        class="page-status"
+        role="status"
+        aria-live="polite"
+      >
+        <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i>
+        Loading student profile...
+      </p>
+
+      <!-- Student profile -->
+      <article id="profileContent" class="community-card profile-card" hidden>
+        <!-- Profile header -->
+        <header class="profile-heading">
+          <img
+            id="profilePhoto"
+            class="profile-photo"
+            src="assets/profile photos/Default.jpg"
+            alt="Student profile photo"
+            loading="lazy"
+          />
+
+          <div class="profile-heading-info">
+            <p class="eyebrow">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              STUDENT PROFILE
+            </p>
+
+            <h1 id="profileName"></h1>
+
+            <p id="profileDepartment" class="profile-department"></p>
+
+            <p id="profileAcademic" class="profile-academic"></p>
+
+            <p id="profileCollege" class="profile-college">
+              <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+            </p>
+          </div>
+        </header>
+
+        <div id="profileOwnerActions" class="profile-owner-actions" hidden>
+          <button id="editProfileButton" class="profile-action-button" type="button">
+            <i class="fa-solid fa-pen" aria-hidden="true"></i>
+            Edit Profile
+          </button>
+          <button id="deleteAccountButton" class="profile-danger-button" type="button">
+            <i class="fa-solid fa-trash" aria-hidden="true"></i>
+            Delete Account
+          </button>
+        </div>
+        <p id="profileUpdateStatus" class="section-description" role="status" aria-live="polite" hidden></p>
+
+        <div id="deleteAccountConfirmModal" class="delete-account-modal" hidden>
+          <div class="delete-account-dialog" role="dialog" aria-modal="true" aria-labelledby="deleteAccountConfirmTitle">
+            <h2 id="deleteAccountConfirmTitle">Delete Account</h2>
+            <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+            <div class="delete-account-actions">
+              <button id="cancelDeleteConfirm" class="profile-cancel-button" type="button">Cancel</button>
+              <button id="confirmDeleteAccount" class="profile-danger-button" type="button">Delete Account</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="deleteAccountPasswordModal" class="delete-account-modal" hidden>
+          <div class="delete-account-dialog" role="dialog" aria-modal="true" aria-labelledby="deleteAccountPasswordTitle">
+            <h2 id="deleteAccountPasswordTitle">Confirm Deletion</h2>
+            <p>Enter your current password to confirm permanent account deletion.</p>
+            <form id="deleteAccountForm" class="delete-account-form">
+              <label for="deleteAccountPassword">Current password</label>
+              <input id="deleteAccountPassword" name="password" type="password" autocomplete="current-password" required />
+              <div class="delete-account-actions">
+                <button id="cancelDeletePassword" class="profile-cancel-button" type="button">Cancel</button>
+                <button id="submitDeleteAccount" class="profile-danger-button" type="submit">Confirm Delete</button>
+              </div>
+              <p id="deleteAccountStatus" class="page-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <section id="editProfileSection" class="profile-section edit-profile-section" hidden>
+          <h2><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Edit Profile</h2>
+          <form id="editProfileForm" class="community-form" enctype="multipart/form-data">
+            <label for="editProfilePhoto">Profile photo (optional)</label>
+            <input id="editProfilePhoto" name="profilePhoto" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" />
+            <input id="removeProfilePhoto" name="removeProfilePhoto" type="hidden" value="false" />
+            <p class="section-description">JPG, PNG, or WebP; maximum 5 MB. Select a replacement or remove the current photo.</p>
+            <img id="editProfilePhotoPreview" class="profile-photo-preview" alt="Selected profile photo preview" hidden />
+            <button id="removeProfilePhotoButton" class="profile-cancel-button" type="button">Remove photo</button>
+            <p id="profilePhotoEditStatus" class="section-description" role="status" aria-live="polite"></p>
+
+            <label for="newTeachSkill">Skills I Can Teach</label>
+            <div class="skill-editor" id="teachSkillEditor">
+              <ul id="editTeachSkillsList" class="skill-editor-list"></ul>
+              <div class="skill-editor-add">
+                <input id="newTeachSkill" type="text" maxlength="100" placeholder="Add a skill to teach" />
+                <button id="addTeachSkill" type="button">Add Skill</button>
+              </div>
+              <input id="editTeachSkills" name="teachSkills" type="hidden" />
+            </div>
+            <p class="section-description">Add, edit, or remove up to 20 skills; each skill can be up to 100 characters.</p>
+
+            <label for="newLearnSkill">Skills I Want to Learn</label>
+            <div class="skill-editor" id="learnSkillEditor">
+              <ul id="editLearnSkillsList" class="skill-editor-list"></ul>
+              <div class="skill-editor-add">
+                <input id="newLearnSkill" type="text" maxlength="100" placeholder="Add a skill to learn" />
+                <button id="addLearnSkill" type="button">Add Skill</button>
+              </div>
+              <input id="editLearnSkills" name="learnSkills" type="hidden" />
+            </div>
+            <p class="section-description">Add, edit, or remove up to 20 skills; each skill can be up to 100 characters.</p>
+
+            <label for="editBio">About Me</label>
+            <textarea id="editBio" name="bio" maxlength="300"></textarea>
+            <p class="section-description">Up to 300 characters.</p>
+
+            <label for="editMobileNumber">Mobile number</label>
+            <input id="editMobileNumber" name="mobileNumber" type="tel" maxlength="20" pattern="\+?[0-9][0-9()\s.-]{5,19}" />
+
+            <label for="editEmail">Email address</label>
+            <input id="editEmail" name="email" type="email" maxlength="255" required />
+
+            <button id="saveProfileButton" type="submit">Save Changes</button>
+            <button id="cancelProfileEdit" class="profile-cancel-button" type="button">Cancel</button>
+            <p id="editProfileStatus" class="page-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- About -->
+        <section class="profile-section" aria-labelledby="aboutHeading">
+          <h2 id="aboutHeading">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            About
+          </h2>
+
+          <p id="profileBio" class="profile-bio">
+            No introduction added.
+          </p>
+        </section>
+
+        <!-- Contact details -->
+        <section
+          class="profile-section contact-section"
+          aria-labelledby="contactHeading"
+        >
+          <h2 id="contactHeading">
+            <i class="fa-regular fa-address-card" aria-hidden="true"></i>
+            Contact Information
+          </h2>
+
+          <p class="section-description">
+            Connect directly and learn together.
+          </p>
+
+          <div id="profileLinks" class="profile-links">
+            <!-- Contact buttons are created by profile.js -->
+          </div>
+
+          <p id="profileContactEmpty" class="contact-empty" hidden>
+            No contact details have been added yet.
+          </p>
+        </section>
+
+        <!-- Skills -->
+        <section class="profile-section" aria-labelledby="skillsHeading">
+          <h2 id="skillsHeading">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            Skills & Learning
+          </h2>
+
+          <div class="profile-skill-grid">
+            <!-- Skills the student can teach -->
+            <section
+              class="profile-skill-card teach-card"
+              aria-labelledby="teachHeading"
+            >
+              <h3 id="teachHeading">
+                <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                Can Teach
+              </h3>
+
+              <p class="section-description">
+                Skills this student can share with others.
+              </p>
+
+              <ul id="teachSkills" class="skill-items">
+                <!-- Skills are populated by profile.js -->
+              </ul>
+            </section>
+
+            <!-- Skills the student wants to learn -->
+            <section
+              class="profile-skill-card learn-card"
+              aria-labelledby="learnHeading"
+            >
+              <h3 id="learnHeading">
+                <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                Wants to Learn
+              </h3>
+
+              <p class="section-description">
+                Skills this student wants to explore.
+              </p>
+
+              <ul id="learnSkills" class="skill-items">
+                <!-- Skills are populated by profile.js -->
+              </ul>
+            </section>
+          </div>
+        </section>
+
+        <section class="profile-section notes-section" aria-labelledby="profileNotesHeading">
+          <h2 id="profileNotesHeading">
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            Shared Notes
+          </h2>
+          <p id="profileNotesStatus" class="section-description" role="status" aria-live="polite">Loading notes...</p>
+          <ul id="profileNotesList" class="profile-notes-list"></ul>
+          <form id="profileNoteForm" class="community-form" enctype="multipart/form-data" hidden>
+            <h3>Upload a Note</h3>
+            <label for="profileNoteTitle">Note title</label>
+            <input id="profileNoteTitle" name="title" type="text" maxlength="150" required />
+            <label for="profileNoteFile">PDF or plain-text file</label>
+            <input id="profileNoteFile" name="noteFile" type="file" accept=".pdf,.txt,application/pdf,text/plain" required />
+            <p class="section-description">Maximum file size: 10 MB.</p>
+            <button id="profileNoteSubmit" type="submit">Upload Note</button>
+            <p id="profileNoteUploadStatus" class="page-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- Back to student directory -->
+        <footer class="profile-footer">
+          <a href="students.html" class="back-to-students">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back to Browse Students
+          </a>
+        </footer>
+      </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/profile.js"></script>
+  </body>
+</html>

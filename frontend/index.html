@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Viniyog | Together We Learn. Together We Grow.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="css\layout\navbar.css" />
     <link rel="stylesheet" href="css\base\variables.css" />
     <link rel="stylesheet" href="css\layout\hero.css" />
@@ -11,6 +12,9 @@
     <link rel="stylesheet" href="css\base\reset.css" />
     <link rel="stylesheet" href="css\base\typography.css" />
     <link rel="stylesheet" href="css\layout\other.css" />
+    <link rel="stylesheet" href="css\layout\footer.css" />
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
   </head>
 
   <body>
@@ -31,13 +35,14 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="students.html">Browse Students</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="notes.html">Shared Notes</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
         <div class="nav-buttons">
           <a href="login.html" class="nav-login">Login</a>
           <a href="signup.html" class="nav-signup">Sign Up</a>
         </div>
-        <button class="menu-toggle">
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -60,7 +65,7 @@
             what you know. Learn what you love. Grow together.
           </p>
           <div class="hero-buttons">
-            <a href="signup.html" class="btn-primary">Get Started</a>
+            <a href="login.html" class="btn-primary">Get Started</a>
             <a href="students.html" class="btn-secondary">Explore Students</a>
           </div>
           <div class="hero-highlights">
@@ -133,5 +138,175 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== How It Works ========== -->
+
+    <section class="how-it-works" id="how-it-works">
+      <div class="how-it-works-container">
+        <div class="how-it-works-heading">
+          <h1>How It Works?</h1>
+        </div>
+        <div class="steps-container">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-icon">
+              <img src="assets\icons\step1.png" />
+            </div>
+            <h3>Sign Up</h3>
+            <p>create your free Viniyog account.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-icon" id="step-2">
+              <img src="assets/icons/step2.png" />
+            </div>
+            <h3>Create Profile</h3>
+            <p>Add your skills, interests and academic details.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-icon">
+              <img src="assets/icons/step3.png" />
+            </div>
+            <h3>Find Students</h3>
+            <p>search and connect with students with similar goals.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-icon" id="step-4" >
+              <img src="assets/icons/step4.png" />
+            </div>
+            <h3>Exchange Skills</h3>
+            <p>Teach, learn and grow together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== Statistics Section ========== -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <!-- Students -->
+        <div class="stat-item">
+          <div class="stat-icon">👥</div>
+          <div class="stat-content">
+            <h3>1000+</h3>
+            <p>Students</p>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="stat-item">
+          <div class="stat-icon">🎓</div>
+          <div class="stat-content">
+            <h3>500+</h3>
+            <p>Skills Shared</p>
+          </div>
+        </div>
+        <!-- Notes -->
+        <div class="stat-item">
+          <div class="stat-icon">📝</div>
+          <div class="stat-content">
+            <h3>1200+</h3>
+            <p>Notes Uploaded</p>
+          </div>
+        </div>
+        <!-- Exchanges -->
+        <div class="stat-item">
+          <div class="stat-icon">🤝</div>
+          <div class="stat-content">
+            <h3>300+</h3>
+            <p>Skill Exchanges</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== CTA Section ========== -->
+
+    <section class="cta-section">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2>
+            Ready to Start Your
+            <span>Learning Journey?</span>
+          </h2>
+          <p>
+            Join Viniyog today and be a part of a growing learning community.
+          </p>
+          <div class="cta-buttons">
+            <a href="login.html" class="btn-primary"> Get Started </a>
+            <a href="students.html" class="btn-secondary"> Learn More </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="site-footer" id="about">
+      <div class="footer-container">
+        <!-- Brand information -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-link">
+            <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog logo" />
+          </a>
+
+          <p>Together We Learn. Together We Grow.</p>
+
+          <p class="footer-description">
+            A student community for sharing skills, exchanging knowledge, and
+            growing together.
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="students.html">Browse Students</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Support links -->
+        <div class="footer-column">
+          <h3>Support</h3>
+
+          <ul>
+            <li><a href="mailto:support@viniyog.example">Contact Us</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Social links -->
+        <div class="footer-column footer-social">
+          <h3>Connect With Us</h3>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:support@viniyog.example" aria-label="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Viniyog. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

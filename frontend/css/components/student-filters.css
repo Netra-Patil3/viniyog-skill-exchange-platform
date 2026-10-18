@@ -1,0 +1,208 @@
+
+/* ============================
+   Student Search & Filters
+============================ */
+
+.student-search-section {
+    width: 100%;
+    padding: 40px 24px 24px;
+    background: var(--color-background, #F8FAFC);
+}
+
+.student-search-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.student-search-heading {
+    margin-bottom: 28px;
+}
+
+.student-search-heading h1 {
+    margin-bottom: 8px;
+    color: var(--color-text, #0F172A);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.student-search-heading p {
+    color: #64748B;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Search bar */
+
+.search-bar {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 18px;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #0F172A;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar input::placeholder {
+    color: #94A3B8;
+}
+
+.search-bar input:focus {
+    border-color: #1E5B89;
+    box-shadow: 0 0 0 3px rgba(30, 91, 137, 0.12);
+}
+
+/* Filter controls */
+
+.student-filters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: center;
+}
+
+.student-filters select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 36px 10px 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #334155;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-filters select:focus {
+    border-color: #1E5B89;
+    box-shadow: 0 0 0 3px rgba(30, 91, 137, 0.12);
+}
+
+/* Clear filters button */
+
+#clearFilters {
+    min-height: 46px;
+    padding: 10px 18px;
+    border: 1px solid #1E5B89;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #1E5B89;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#clearFilters:hover {
+    background: #1E5B89;
+    color: #FFFFFF;
+}
+
+#clearFilters:focus-visible {
+    outline: 3px solid rgba(30, 91, 137, 0.3);
+    outline-offset: 3px;
+}
+
+/* Student count */
+
+#studentCount {
+    margin-top: 22px;
+    color: #64748B;
+    font-size: 0.95rem;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .student-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+    .student-search-section {
+        padding: 28px 16px 20px;
+    }
+
+    .student-search-heading h1 {
+        font-size: 1.65rem;
+    }
+
+    .student-filters {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .search-bar input {
+        min-height: 48px;
+    }
+}
+
+/* Autocomplete suggestions */
+.search-bar {
+    position: relative;
+}
+
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.search-suggestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: #FFFFFF;
+    color: #0F172A;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.search-suggestion:hover,
+.search-suggestion.active {
+    background: #F1F5F9;
+}
+
+.suggestion-value {
+    overflow-wrap: anywhere;
+}
+
+.suggestion-category {
+    flex-shrink: 0;
+    color: #64748B;
+    font-size: 0.8rem;
+}
+
+.no-students-message {
+    padding: 24px;
+    color: #64748B;
+    text-align: center;
+}

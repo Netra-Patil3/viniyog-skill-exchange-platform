@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login | Viniyog</title>
+    <meta
+      name="description"
+      content="Log in to Viniyog, connect with fellow students, and exchange skills."
+    />
+
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/base/variables.css" />
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/typography.css" />
+    <link rel="stylesheet" href="css/base/global.css" />
+    <link rel="stylesheet" href="css/layout/navbar.css" />
+
+    <!-- Login page CSS -->
+    <link rel="stylesheet" href="css/pages/login.css" />
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+  </head>
+
+  <body>
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog" />
+          </a>
+          <div class="logo-text">
+            <h1>VINIYOG</h1>
+            <p>Together We Learn. Together We Grow.</p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="students.html">Browse Students</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="notes.html">Shared Notes</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <a href="login.html" class="nav-login">Login</a>
+          <a href="signup.html" class="nav-signup">Sign Up</a>
+        </div>
+        <button class="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ================================
+         LOGIN SECTION
+    ================================= -->
+
+    <main class="login-page">
+      <section class="login-container" aria-labelledby="login-title">
+        <!-- Left branding panel -->
+        <div class="login-visual">
+          <div class="visual-content">
+            <span class="visual-label"> YOUR SKILLS. YOUR COMMUNITY. </span>
+
+            <h2>
+              Together We Learn.
+              <span>Together We Grow.</span>
+            </h2>
+
+            <p>
+              Connect with fellow students, share what you know, and discover
+              new skills through meaningful exchanges.
+            </p>
+
+            <div class="visual-icons" aria-hidden="true">
+              <div class="visual-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+
+              <div class="visual-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+
+              <div class="visual-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+            </div>
+
+            <p class="visual-caption">
+              Connect <span>•</span> Teach <span>•</span> Learn
+            </p>
+          </div>
+        </div>
+
+        <!-- Right login form -->
+        <div class="login-form-panel">
+          <div class="login-form-header">
+            <h2 id="login-title">Welcome Back!</h2>
+
+            <p>Log in to continue your learning journey.</p>
+          </div>
+
+          <form class="login-form" action="#" method="post">
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">PRN or Email Address</label>
+
+              <div class="input-wrapper">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
+                <input
+                  type="text"
+                  id="email"
+                  name="identifier"
+                  placeholder="Enter your PRN or email address"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <div class="password-label-row">
+                <label for="password">Password</label>
+
+                <a href="#" class="forgot-password"> Forgot Password? </a>
+              </div>
+
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Show password"
+                  aria-pressed="false"
+                >
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Remember me -->
+            <div class="form-options">
+              <label class="remember-option">
+                <input type="checkbox" name="remember" />
+                <span>Remember me</span>
+              </label>
+            </div>
+
+            <!-- Login button -->
+            <button type="submit" class="login-submit">
+              Log In
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <p id="loginFeedback" class="login-feedback" role="status" aria-live="polite"></p>
+
+            <!-- Divider -->
+            <div class="form-divider">
+              <span>Welcome to Viniyog</span>
+            </div>
+
+            <!-- Sign up link -->
+            <p class="signup-prompt">
+              Don't have an account?
+              <a href="signup.html">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="site-footer" id="about">
+      <div class="footer-container">
+        <!-- Brand information -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-link">
+            <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog logo" />
+          </a>
+
+          <p>Together We Learn. Together We Grow.</p>
+
+          <p class="footer-description">
+            A student community for sharing skills, exchanging knowledge, and
+            growing together.
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="students.html">Browse Students</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Support links -->
+        <div class="footer-column">
+          <h3>Support</h3>
+
+          <ul>
+            <li><a href="mailto:support@viniyog.example">Contact Us</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Social links -->
+        <div class="footer-column footer-social">
+          <h3>Connect With Us</h3>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:support@viniyog.example" aria-label="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Viniyog. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

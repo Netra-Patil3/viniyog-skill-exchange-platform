@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | Viniyog</title>
+
+    <!-- Existing project CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/layout/navbar.css">
+    <link rel="stylesheet" href="css/pages/signup.css">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Cropper.js: interactive photo cropping -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"
+            defer></script>
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html" aria-label="Viniyog home">
+                <img src="assets/logo/viniyog-logo-light.png" alt="Viniyog logo">
+            </a>
+            <div class="logo-text">
+                <h1>VINIYOG</h1>
+                <p>Together We Learn. Together We Grow.</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="students.html">Browse Students</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="notes.html">Shared Notes</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="login.html" class="nav-login">Login</a>
+            <a href="signup.html" class="nav-signup">Sign Up</a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+    </div>
+</nav>
+
+<main class="signup-layout">
+
+    <!-- LEFT PANEL: FIXED ON DESKTOP -->
+    <aside class="signup-sidebar">
+
+        <a href="index.html" class="signup-brand">
+            <img src="assets/logo/viniyog-logo-light.png"
+                 alt="Viniyog logo">
+        </a>
+
+        <div class="sidebar-main">
+
+            <span class="sidebar-label">
+                YOUR SKILL EXCHANGE COMMUNITY
+            </span>
+
+            <h1>
+                Build Your Skills.<br>
+                <span>Find Your Opportunities.</span>
+            </h1>
+
+            <p class="sidebar-description">
+                Connect with fellow students, share what you know,
+                and discover something new. Your next learning
+                opportunity starts here.
+            </p>
+
+            <!-- Replace with your existing homepage illustration -->
+            <div class="sidebar-hero-image">
+                <img src="assets/images/hero/home-hero.png"
+                     alt="Students connecting and learning together"
+                     onerror="this.style.display='none'">
+            </div>
+
+            <div class="sidebar-benefits">
+
+                <div class="benefit">
+                    <span class="benefit-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                    <div>
+                        <h3>Share Your Skills</h3>
+                        <p>Teach others what you already know.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </span>
+                    <div>
+                        <h3>Discover New Skills</h3>
+                        <p>Learn from students in your community.</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <span class="benefit-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </span>
+                    <div>
+                        <h3>Exchange Knowledge</h3>
+                        <p>Help each other learn and grow.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="sidebar-tagline">
+            Together We Learn. Together We Grow.
+        </p>
+
+    </aside>
+
+
+    <!-- RIGHT PANEL: INDEPENDENTLY SCROLLABLE ON DESKTOP -->
+    <section class="signup-main">
+
+        <div class="signup-content">
+
+            <header class="form-header">
+                <span class="form-eyebrow">JOIN VINIYOG</span>
+                <h2>Create Your Account</h2>
+                <p>Set up your student profile and start exchanging skills.</p>
+                <p class="required-legend">
+                    <span>*</span> Required fields
+                </p>
+            </header>
+
+
+            <form id="signupForm" novalidate>
+
+                <!-- 1. PROFILE PHOTO -->
+                <section class="form-section">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </span>
+                        <div>
+                            <h3>Profile Photo</h3>
+                            <p>Help other students recognise you.</p>
+                        </div>
+                        <span class="optional-badge">Optional</span>
+                    </div>
+
+                    <div class="photo-editor">
+
+                        <div class="photo-circle" id="photoPreview">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="photo-controls">
+                            <label for="profilePhoto" class="outline-button">
+                                <i class="fa-solid fa-upload"></i>
+                                Choose Photo
+                            </label>
+
+                            <input type="file"
+                                   id="profilePhoto"
+                                   accept="image/jpeg,image/png,image/webp"
+                                   hidden>
+
+                            <p>JPG, PNG or WebP. You can crop and adjust it.</p>
+                            <p class="photo-status" id="photoStatus">
+                                No photo selected.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="crop-editor" id="cropEditor" hidden>
+                        <p class="crop-instructions">
+                            Move or zoom the image to position your face
+                            inside the circular crop.
+                        </p>
+
+                        <div class="crop-image-container">
+                            <img id="cropImage" alt="Crop your profile photo">
+                        </div>
+
+                        <div class="crop-actions">
+                            <button type="button"
+                                    class="outline-button"
+                                    id="cancelCrop">
+                                Cancel
+                            </button>
+
+                            <button type="button"
+                                    class="primary-small-button"
+                                    id="applyCrop">
+                                Use This Photo
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- 2. PERSONAL DETAILS -->
+                <section class="form-section">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="fa-regular fa-id-card"></i>
+                        </span>
+                        <div>
+                            <h3>Personal Details</h3>
+                            <p>Tell us about your college identity.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-field">
+                            <label for="fullName">Full Name <span>*</span></label>
+                            <input type="text"
+                                   id="fullName"
+                                   name="fullName"
+                                   placeholder="Your full name"
+                                   autocomplete="name"
+                                   required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="prn">PRN / Student ID <span>*</span></label>
+                            <input type="text"
+                                   id="prn"
+                                   name="prn"
+                                   placeholder="Your student PRN"
+                                   required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="department">Department <span>*</span></label>
+                            <select id="department" name="department" required>
+                                <option value="">Select department</option>
+                                <option value="AI & Data Science">AI &amp; Data Science</option>
+                                <option value="AI & Machine Learning">AI &amp; Machine Learning</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Civil Engineering">Civil Engineering</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Textile Technology">Textile Technology</option>
+                                <option value="Manmade Textile Technology">Manmade Textile Technology</option>
+                                <option value="Textile Plant Engineering">Textile Plant Engineering</option>
+                                <option value="Textile Chemistry">Textile Chemistry</option>
+                                <option value="Fashion Technology">Fashion Technology</option>
+                                <option value="Technical Textiles">Technical Textiles</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="academicYear">Academic Year <span>*</span></label>
+                            <select id="academicYear" name="academicYear" required>
+                                <option value="">Select year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field full-width">
+                            <label for="college">College Name <span>*</span></label>
+                            <input type="text"
+                                   id="college"
+                                   name="college"
+                                   placeholder="Your college name"
+                                   required>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- 3. ACCOUNT DETAILS -->
+                <section class="form-section">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <div>
+                            <h3>Account Details</h3>
+                            <p>Use your personal email address.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-field full-width">
+                            <label for="email">Personal Email Address <span>*</span></label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   placeholder="you@example.com"
+                                   autocomplete="email"
+                                   required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="password">Password <span>*</span></label>
+                            <div class="password-field">
+                                <input type="password"
+                                       id="password"
+                                       name="password"
+                                       placeholder="Create a password"
+                                       minlength="8"
+                                       autocomplete="new-password"
+                                       required>
+                                <button type="button"
+                                        class="password-toggle"
+                                        data-target="password"
+                                        aria-label="Show password">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <small>At least 8 characters.</small>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="confirmPassword">Confirm Password <span>*</span></label>
+                            <div class="password-field">
+                                <input type="password"
+                                       id="confirmPassword"
+                                       name="confirmPassword"
+                                       placeholder="Re-enter password"
+                                       minlength="8"
+                                       autocomplete="new-password"
+                                       required>
+                                <button type="button"
+                                        class="password-toggle"
+                                        data-target="confirmPassword"
+                                        aria-label="Show password">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- 4. CONTACT DETAILS -->
+                <section class="form-section">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="fa-solid fa-address-book"></i>
+                        </span>
+                        <div>
+                            <h3>Contact Details</h3>
+                            <p>Choose how other students can connect with you.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-notice">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>
+                            <strong>At least one contact detail is required.</strong>
+                            Enter your phone number or at least one profile/contact link.
+                        </p>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel"
+                                   id="phone"
+                                   name="phone"
+                                   placeholder="Your phone number"
+                                   autocomplete="tel">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="linkedin">LinkedIn Profile</label>
+                            <input type="url"
+                                   id="linkedin"
+                                   name="linkedin"
+                                   placeholder="https://linkedin.com/in/...">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="github">GitHub Profile</label>
+                            <input type="url"
+                                   id="github"
+                                   name="github"
+                                   placeholder="https://github.com/...">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="portfolio">Portfolio / Personal Website</label>
+                            <input type="url"
+                                   id="portfolio"
+                                   name="portfolio"
+                                   placeholder="https://yourportfolio.com">
+                        </div>
+
+                        <div class="form-field full-width">
+                            <label for="otherContact">Other Contact Link</label>
+                            <input type="url"
+                                   id="otherContact"
+                                   name="otherContact"
+                                   placeholder="Another profile or contact link (optional)">
+                        </div>
+
+                    </div>
+
+                    <p class="validation-message" id="contactError" hidden>
+                        Please provide at least one contact detail.
+                    </p>
+
+                </section>
+
+
+                <!-- 5. ABOUT ME -->
+                <section class="form-section">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="fa-regular fa-message"></i>
+                        </span>
+                        <div>
+                            <h3>About Me</h3>
+                            <p>Introduce yourself to the Viniyog community.</p>
+                        </div>
+                        <span class="optional-badge">Optional</span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="bio">Short Introduction</label>
+                        <textarea id="bio"
+                                  name="bio"
+                                  rows="4"
+                                  maxlength="300"
+                                  placeholder="Your interests, goals, or what you enjoy learning..."></textarea>
+                        <small class="character-counter">
+                            <span id="bioCount">0</span>/300 characters
+                        </small>
+                    </div>
+
+                </section>
+
+
+                <!-- 6. SKILLS -->
+                <section class="form-section">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </span>
+                        <div>
+                            <h3>Skills Exchange</h3>
+                            <p>Tell students what you can teach and want to learn.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="teachSkills">Skills I Can Teach <span>*</span></label>
+                        <input type="text"
+                               id="teachSkills"
+                               name="teachSkills"
+                               placeholder="e.g. C++, HTML, Mathematics"
+                               required>
+                        <small>Separate multiple skills with commas.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="learnSkills">Skills I Want to Learn <span>*</span></label>
+                        <input type="text"
+                               id="learnSkills"
+                               name="learnSkills"
+                               placeholder="e.g. JavaScript, Python, Machine Learning"
+                               required>
+                        <small>Separate multiple skills with commas.</small>
+                    </div>
+
+                </section>
+
+
+                <!-- 7. TERMS AND SUBMISSION -->
+                <div class="terms-row">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        I agree to the Viniyog
+                        <a href="#terms">Terms and Conditions</a>
+                        and <a href="#privacy">Privacy Policy</a>.
+                        <span>*</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="create-account-button">
+                    Create Account
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <p class="form-feedback" id="formFeedback" role="status"></p>
+
+                <p class="login-link">
+                    Already have an account?
+                    <a href="login.html">Log In</a>
+                </p>
+
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<script src="js/signup.js"></script>
+</body>
+</html>

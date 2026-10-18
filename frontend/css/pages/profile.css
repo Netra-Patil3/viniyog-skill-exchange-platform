@@ -1,0 +1,677 @@
+
+/* ========================================
+   VINIYOG — STUDENT PROFILE PAGE
+   File: css/pages/profile.css
+======================================== */
+
+/* ---------- Page Layout ---------- */
+
+.profile-page {
+  width: min(100% - 2rem, 1000px);
+  margin: 2.5rem auto;
+}
+
+/* ---------- Main Profile Card ---------- */
+
+.profile-card {
+  margin: 1.5rem 0;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* ---------- Loading and Error Status ---------- */
+
+.page-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 120px;
+  padding: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.page-status i {
+  color: var(--primary-color);
+}
+
+/* ---------- Profile Header ---------- */
+
+.profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-photo {
+  display: block;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border: 4px solid var(--bg-white);
+  border-radius: 50%;
+  background: var(--bg-light);
+  box-shadow: 0 0 0 3px var(--accent-color);
+}
+
+.profile-heading-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.profile-owner-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.profile-action-button,
+.profile-cancel-button,
+.profile-danger-button {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.7rem;
+  color: var(--primary-color);
+  background: var(--bg-white);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-action-button:hover,
+.profile-cancel-button:hover {
+  color: var(--text-white);
+  background: var(--primary-color);
+}
+
+.profile-danger-button {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.profile-danger-button:hover {
+  color: var(--text-white);
+  background: #c0392b;
+}
+
+.delete-account-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.55);
+  z-index: 1000;
+}
+
+.delete-account-dialog {
+  width: min(100%, 32rem);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.2);
+  padding: 1.5rem;
+}
+
+.delete-account-dialog h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.delete-account-dialog p {
+  margin-top: 0.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.delete-account-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.delete-account-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.delete-account-form input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  font: inherit;
+}
+
+.delete-account-form .page-status {
+  min-height: auto;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0;
+}
+
+.edit-profile-section {
+  padding: 1.25rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.edit-profile-section .community-form,
+.notes-section .community-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.edit-profile-section textarea,
+.notes-section input[type="text"],
+.notes-section input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  font: inherit;
+}
+
+.edit-profile-section textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.profile-photo-preview {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 3px solid var(--bg-white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.skill-editor {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.skill-editor-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-editor-list li,
+.skill-editor-add {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-editor-list input,
+.skill-editor-add input,
+.edit-profile-section input[type="email"],
+.edit-profile-section input[type="tel"] {
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  font: inherit;
+}
+
+.skill-editor-list input,
+.skill-editor-add input {
+  flex: 1;
+}
+
+.skill-editor-list button,
+.skill-editor-add button {
+  flex-shrink: 0;
+  padding: 0.6rem 0.75rem;
+  color: var(--primary-color);
+  background: var(--bg-white);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.6rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.skill-editor-list button:hover,
+.skill-editor-add button:hover {
+  color: var(--text-white);
+  background: var(--primary-color);
+}
+
+.edit-profile-section button[type="submit"],
+.notes-section button[type="submit"] {
+  justify-self: start;
+}
+
+.profile-notes-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-note-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.3rem 1rem;
+  padding: 1rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+}
+
+.profile-note-item strong {
+  overflow-wrap: anywhere;
+}
+
+.profile-note-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.profile-note-item button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  padding: 0.55rem 0.8rem;
+  color: var(--primary-color);
+  background: var(--bg-white);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.6rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-note-item button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.profile-heading .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.6rem;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.profile-heading h1 {
+  margin: 0.35rem 0 0.65rem;
+  color: var(--text-primary);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.profile-heading-info > p:not(.eyebrow) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.45rem 0;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.profile-heading-info > p i {
+  flex-shrink: 0;
+  color: var(--secondary-color);
+}
+
+/* ---------- Profile Sections ---------- */
+
+.profile-section {
+  min-width: 0;
+  margin-top: 2rem;
+}
+
+.profile-section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1rem;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.profile-section > h2 i {
+  flex-shrink: 0;
+  color: var(--secondary-color);
+}
+
+.profile-bio {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Small Section Descriptions ---------- */
+
+.section-description {
+  margin: 0.25rem 0 1rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* ---------- Contact Details ---------- */
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  max-width: 100%;
+  padding: 0.7rem 1rem;
+  color: var(--primary-color);
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profile-links a i {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.profile-links a:hover {
+  color: var(--text-white);
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.profile-links a:focus-visible,
+.back-to-students:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.contact-empty {
+  margin-top: 1rem;
+  padding: 1rem;
+  color: var(--text-secondary);
+  background: var(--bg-light);
+  border: 1px dashed var(--border-color);
+  border-radius: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ---------- Skills Section ---------- */
+
+.profile-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.profile-skill-card {
+  min-width: 0;
+  padding: 1.5rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.profile-skill-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.75rem;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.profile-skill-card h3 i {
+  flex-shrink: 0;
+  color: var(--secondary-color);
+}
+
+.profile-skill-card .section-description {
+  margin-bottom: 1.1rem;
+}
+
+/* ---------- Skill Tags ---------- */
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-items li {
+  max-width: 100%;
+  padding: 0.55rem 0.85rem;
+  color: var(--primary-color);
+  background: var(--bg-white);
+  border: 1px solid var(--accent-color);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Back Navigation ---------- */
+
+.profile-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.back-to-students {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  color: var(--primary-color);
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.back-to-students:hover {
+  color: var(--text-white);
+  background: var(--primary-color);
+}
+
+/* ---------- Hidden Elements ---------- */
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Tablet and Mobile ---------- */
+
+@media (max-width: 650px) {
+  .profile-page {
+    width: calc(100% - 1.25rem);
+    margin: 1.25rem auto;
+  }
+
+  .profile-card {
+    margin: 0.75rem 0;
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .profile-heading {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 125px;
+    height: 125px;
+  }
+
+  .profile-heading-info {
+    width: 100%;
+  }
+
+  .profile-owner-actions {
+    justify-content: center;
+  }
+
+  .profile-note-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .profile-note-item button {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  .profile-heading .eyebrow {
+    justify-content: center;
+  }
+
+  .profile-heading-info > p:not(.eyebrow) {
+    justify-content: center;
+  }
+
+  .profile-section {
+    margin-top: 1.5rem;
+  }
+
+  .profile-section > h2 {
+    font-size: 1.18rem;
+  }
+
+  .profile-skill-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .profile-skill-card {
+    padding: 1.15rem;
+  }
+
+  .profile-links {
+    gap: 0.6rem;
+  }
+
+  .profile-links a {
+    padding: 0.65rem 0.8rem;
+  }
+
+  .profile-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .back-to-students {
+    max-width: 100%;
+  }
+}
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 380px) {
+  .profile-card {
+    padding: 1rem;
+  }
+
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile-heading h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-skill-card {
+    padding: 1rem;
+  }
+
+  .profile-links a {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .back-to-students {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------- Reduced Motion Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-links a,
+  .back-to-students {
+    transition: none;
+  }
+
+  .profile-links a:hover {
+    transform: none;
+  }
+}
